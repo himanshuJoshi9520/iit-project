@@ -3,7 +3,8 @@ from PIL import Image
 import pytesseract
 import re
 
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+# Remove the tesseract_cmd setting, as it won't work on cloud platforms
+# pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 def extract_text_from_image(image, lang):
     text = pytesseract.image_to_string(image, lang=lang)
